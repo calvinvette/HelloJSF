@@ -11,13 +11,22 @@
 <h:body>
 
 	<h:form>
-		<h:inputText value="#{helloBean.name}" />
-		<h:commandButton action="#{helloBean.register}" 
+		<h:inputText value="#{MyHelloBean.name}" />
+		<h:commandButton action="#{MyHelloBean.register}" 
 			value="Register!" />
 	</h:form>
 
-	Welcome, #{helloBean.name}
+	Welcome, #{MyHelloBean.name}
 
+	<h:form>
+		Customer ID: <h:inputText value="#{MyHelloBean.customer.customerId}" /><br/>
+		First Name: <h:inputText value="#{MyHelloBean.customer.firstName}" /><br/>
+		Last Name: <h:inputText value="#{MyHelloBean.customer.lastName}" /><br/>
+		Phone Number: <h:inputText value="#{MyHelloBean.customer.phoneNumber}" /><br/>
+		Email: <h:inputText value="#{MyHelloBean.customer.email}" /><br/>
+		<h:commandButton action="#{MyHelloBean.addCustomer}" 
+			value="Add Customer" />
+	</h:form>
 </h:body>
 
 </html>
