@@ -6,6 +6,7 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean(name="customer")
 public class CustomerManagedBean {
 	private Customer customer = new Customer();
+	private CustomerDAO dao = new CustomerJPADAO();
 	
 //	public Customer getCustomer() {
 //		return customer;
@@ -79,6 +80,7 @@ public class CustomerManagedBean {
 	}
 	
 	public String addCustomer() {
+		dao.insert(customer);
 //		System.out.println("Added Customer: " + getCustomer());
 		System.out.println("Added Customer: " + this.toString());
 		return null;
