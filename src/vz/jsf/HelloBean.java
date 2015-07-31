@@ -34,9 +34,6 @@ public class HelloBean implements Serializable {
 		return null;
 	}
 	
-	public String addCustomer() {
-		System.out.println("Added Customer: " + getCustomer());
-		return null;
-	}
+
 	
 }

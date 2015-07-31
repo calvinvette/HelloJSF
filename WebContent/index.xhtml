@@ -19,12 +19,12 @@
 	Welcome, #{MyHelloBean.name}
 
 	<h:form>
-		Customer ID: <h:inputText value="#{MyHelloBean.customer.customerId}" /><br/>
-		First Name: <h:inputText value="#{MyHelloBean.customer.firstName}" /><br/>
-		Last Name: <h:inputText value="#{MyHelloBean.customer.lastName}" /><br/>
-		Phone Number: <h:inputText value="#{MyHelloBean.customer.phoneNumber}" /><br/>
-		Email: <h:inputText value="#{MyHelloBean.customer.email}" /><br/>
-		<h:commandButton action="#{MyHelloBean.addCustomer}" 
+		Customer ID: <h:inputText value="#{customer.customerId}" /><br/>
+		First Name: <h:inputText value="#{customer.firstName}" /><br/>
+		Last Name: <h:inputText value="#{customer.lastName}" /><br/>
+		Phone Number: <h:inputText value="#{customer.phoneNumber}" /><br/>
+		Email: <h:inputText value="#{customer.email}" /><br/>
+		<h:commandButton action="#{customer.addCustomer}" 
 			value="Add Customer" />
 	</h:form>
 </h:body>
