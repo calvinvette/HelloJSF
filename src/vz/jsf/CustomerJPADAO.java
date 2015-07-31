@@ -28,6 +28,13 @@ public class CustomerJPADAO {
 		return entityManagerFactory;
 	}
 	
+	// TODO - migrate this to the Customer class as a @NamedQuery
+	public List<Customer> findAll() {
+		return getEntityManager()
+				.createQuery("select c from Customer c", Customer.class)
+				.getResultList();
+	}
+	
 	public void insert(Customer customer) {
 		getEntityManager().persist(customer);
 	}
@@ -44,8 +51,12 @@ public class CustomerJPADAO {
 		return getEntityManager().find(Customer.class, customerId);
 	}
 	
+	// TODO - migrate this to the Customer class as a @NamedQuery
 	public List<Customer> findByLastName(String lastName) {
-		return null;
+		return getEntityManager()
+				.createQuery("select c from Customer c where c.lastName = :lastName", Customer.class)
+				.setParameter("lastName", lastName)
+				.getResultList();
 	}
 	
 }
